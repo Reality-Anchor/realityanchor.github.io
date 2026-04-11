@@ -1,28 +1,27 @@
-:root
-{
+:root {
   /* Backgrounds — layered from darkest to lightest */
   --bg:       #16181C;  /* page background */
   --bg2:      #1E2026;  /* cards, sections */
   --bg3:      #252830;  /* raised elements, hover states */
 
   /* Text */
-  --txt:      #E8E4DC;           /* primary text */
-  --txt2:     rgba(232,228,220,0.5);  /* secondary / muted */
-  --txt3:     rgba(232,228,220,0.28); /* labels, hints */
+  --txt:      #E8E4DC;
+  --txt2:     rgba(232, 228, 220, 0.5);
+  --txt3:     rgba(232, 228, 220, 0.28);
 
   /* Accent */
-  --accent:   #C9A97A;               /* gold — buttons, highlights */
-  --accent2:  rgba(201,169,122,0.12); /* faint accent for backgrounds */
+  --accent:   #C9A97A;
+  --accent2:  rgba(201, 169, 122, 0.12);
 
   /* Borders */
-  --line:     rgba(255,255,255,0.07); /* subtle dividers */
-  --line2:    rgba(255,255,255,0.12); /* slightly stronger borders */
+  --line:     rgba(255, 255, 255, 0.07);
+  --line2:    rgba(255, 255, 255, 0.12);
 
   /* Fonts */
   --ff-head:  'Barlow', sans-serif;
   --ff-body:  'DM Sans', sans-serif;
 
-  /* Spacing scales */
+  /* Spacing */
   --space-xs: 8px;
   --space-sm: 16px;
   --space-md: 24px;
@@ -35,208 +34,41 @@
   --radius-lg: 14px;
 }
 
-.container
-{
-  height: auto;
-  overflow-y: auto;
-}
+/* ─── Base ─────────────────────────────────────────────── */
 
-html
-{
+html {
+  font-size: large;
+  color: var(--accent);
+  background-color: var(--bg);
   background-image: url('MainBG_Intro.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
-  font-size: large;
-  color: var(--accent);
-  background-color: var(--bg);
 }
 
-body
-{
-  background-image: url('MainBG_Intro.png');
-  background-size: cover;
-  background-position: center;
-}
-
-#bottom-box
-{
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-xl) var(--space-md);
-  background-color: var(--bg2);
-  border: 1px solid var(--line2);
-}
-
-.logos
-{
+.site {
   display: flex;
   flex-direction: column;
-
-  #ras-logo
-  {
-    display: block;
-    height: 256px;
-    width: 256px;
-  }
-
-  #ras-text-logo
-  {
-    display: block;
-    height: 256px;
-    width: 256px;
-  }
+  padding-left: 40px;
+  padding-right: 40px;
+  min-height: 100vh;
 }
 
-.social-buttons
-{
-  display: flex;
-  gap: var(--space-md);
-
-  #discord-button
-  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-
-    #discord-logo
-    {
-      display: block;
-      filter: brightness(2);
-      height: 32px;
-      width: 32px;
-    }
-  }
-
-  #steam-button
-  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-    
-    #steam-logo
-    {
-      display: block;
-      height: 32px;
-      width: 32px;
-    }
-  }
-
-  #youtube-button
-  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-
-    #youtube-logo
-    {
-      display: block;
-      height: 20px;
-      width: 28px;
-    }
-  }
-}
-
-#title-box
-{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-xs) var(--space-md);
-  background-color: var(--bg2);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line2);
-  margin: var(--space-sm) auto;
-}
-
-#title-text
-{
-  font-family: var(--ff-head);
-  font-weight: light;
-  font-size: 2.5em;
-  letter-spacing: 4px;
-
-  color: var(--accent);
-} 
-
-#download-button
-{
-  background-color: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-
-  transform: scale(1);
-  transition: transform 0.1s ease-in-out, background-color 0.1s ease;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-}
-
-#download-button:hover
-{
-  background-color: var(--accent2);
-  transform: scale(1.1);
-}
-
-.nav
-{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  /*background-color: var(--bg2);
-  padding: var(--space-md);
-  border-bottom: 1px solid var(--line);*/
-}
-
-p
-{
+p {
   font-family: var(--ff-body);
-  line-height: 1.5;
   font-size: 1.5em;
+  line-height: 1.5;
   color: var(--txt);
 }
 
-h1
-{
+h1 {
   font-family: var(--ff-head);
   font-size: 2.5em;
   color: var(--accent);
 }
 
-
-.box
-{
-  background-color: var(--bg3);
-  padding: var(--space-md);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--line2);
-  margin: 24px;
-  margin-bottom: 10px;
-  margin: 0 auto;
-}
-
-button
-{
+button {
   background-color: transparent;
   color: var(--txt);
   border: 1px solid var(--accent);
@@ -245,3 +77,181 @@ button
   cursor: pointer;
 }
 
+/* ─── Layout ────────────────────────────────────────────── */
+
+.container {
+  height: auto;
+  overflow-y: auto;
+}
+
+.box {
+  background-color: var(--bg3);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line2);
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+#subtitle-text {
+  display: flex;
+  font-family: var(--ff-head);
+  font-weight: lighter;
+  font-size: 2.5em;
+  color: #f2f2f2;
+  justify-content: center;
+}
+
+.boxed-headers {
+  display: inline-block;
+  border: 1px solid var(--line2);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-lg);
+  background-color: rgba(30, 32, 38, 0.658);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+#history-header {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--ff-head);
+  font-weight: lighter;
+  font-size: 2.5em;
+  color: #f2f2f2;
+  justify-content: center;
+  gap: 0;  
+  margin: 0;
+}
+
+#so-far-text {
+  font-family: var(--ff-head);
+  font-weight: lighter;
+  font-size: 0.4em;
+  color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+#history-body {
+  font-family: var(--ff-body);
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: var(--txt);
+}
+
+/* ─── Title Bar ─────────────────────────────────────────── */
+
+#title-box {
+  display: flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--bg2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line2);
+}
+
+#title-text {
+  font-family: var(--ff-head);
+  font-weight: 300;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  color: var(--accent);
+}
+
+#ras-logo {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+/* ─── Bottom Bar ────────────────────────────────────────── */
+
+#bottom-box {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  background-color: var(--bg2);
+  border: 1px solid var(--line2);
+}
+
+/* ─── Logos ─────────────────────────────────────────────── */
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#ras-text-logo {
+  display: flex;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+}
+
+/* ─── Social Buttons ────────────────────────────────────── */
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  bottom: 30px;
+  right: 30px;
+  padding-top: 180px;
+  gap: var(--space-md);
+}
+
+#discord-button,
+#steam-button,
+#youtube-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+}
+
+#discord-logo {
+  display: block;
+  filter: brightness(2);
+  height: 32px;
+  width: 32px;
+}
+
+#steam-logo {
+  display: block;
+  height: 32px;
+  width: 32px;
+}
+
+#youtube-logo {
+  display: block;
+  height: 20px;
+  width: 28px;
+}
+
+/* ─── Download Button ───────────────────────────────────── */
+
+#download-button {
+  display: flex;
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out, background-color 0.1s ease;
+}
+
+#download-button:hover {
+  background-color: var(--accent2);
+  transform: scale(1.1);
+}
