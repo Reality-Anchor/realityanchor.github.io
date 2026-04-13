@@ -40,7 +40,7 @@ html {
   font-size: large;
   color: var(--accent);
   background-color: var(--bg);
-  background-image: url('MainBG_Intro.png');
+  background-image: url('Images/MainBG_Intro.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
