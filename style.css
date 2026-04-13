@@ -47,6 +47,10 @@ html {
   background-attachment: fixed;
 }
 
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
 .site {
   display: flex;
   flex-direction: column;
@@ -65,6 +69,12 @@ p {
 h1 {
   font-family: var(--ff-head);
   font-size: 2.5em;
+  color: var(--accent);
+}
+
+h2 {
+  font-family: var(--ff-head);
+  font-size: 1.8em;
   color: var(--accent);
 }
 
@@ -152,10 +162,28 @@ button {
 #title-box {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: var(--space-xs) var(--space-md);
   background-color: var(--bg2);
   border-radius: var(--radius-md);
   border: 1px solid var(--line2);
+
+    #download-button {
+    display: flex;
+    background-color: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease;
+  }
+
+  #download-button:hover 
+  {
+    background-color: var(--accent2);
+    transform: scale(1.1);
+  }
 }
 
 #title-text {
@@ -164,6 +192,11 @@ button {
   font-size: 2.5em;
   letter-spacing: 4px;
   color: var(--accent);
+}
+
+#download-button:hover {
+  background-color: var(--accent2);
+  transform: scale(1.1);
 }
 
 #ras-logo {
@@ -238,20 +271,46 @@ button {
   width: 28px;
 }
 
-/* ─── Download Button ───────────────────────────────────── */
+/* Download page */
 
-#download-button {
+#download-header {
+  text-align: center;
+}
+
+/* Marquee */
+
+.dot /* Decorative dot for visual interest, no content */
+{
   display: flex;
-  background-color: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transform: scale(1);
-  transition: transform 0.1s ease-in-out, background-color 0.1s ease;
+  font-family: var(--ff-head);
+  justify-content: center;
+  align-items: center;
 }
 
-#download-button:hover {
-  background-color: var(--accent2);
-  transform: scale(1.1);
+.marquee-content {
+  display: inline-flex;
+  gap: 48px;
+  animation: marquee 18s linear infinite;
+  background-color: rgba(30, 32, 38, 0.39); /* add background and border for better visibility */
+  padding: 10px;
+  border: 1px solid var(--line2);
 }
+
+.screenshot-marquee img {
+  height: 250px;       /* fixed height */
+  width: auto;         /* width adjusts to keep proportions */
+  white-space: nowrap; /* prevent wrapping */
+  overflow: hidden;    /* hide any overflow */
+  border-radius: 20px;
+  border: 1px solid var(--line);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
