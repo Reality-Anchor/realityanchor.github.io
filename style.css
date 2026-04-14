@@ -51,12 +51,32 @@ body {
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
+.body-text{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 40%;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #191b24b6;
+  border: 2px solid #252830;
+  border-radius: 20px;
+}
+
 .site {
   display: flex;
   flex-direction: column;
   padding-left: 40px;
   padding-right: 40px;
   min-height: 100vh;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: var(--accent);
 }
 
 p {
@@ -125,7 +145,6 @@ button {
   border-radius: var(--radius-lg);
   background-color: rgba(30, 32, 38, 0.658);
   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 #history-header {
@@ -168,9 +187,19 @@ button {
   border-radius: var(--radius-md);
   border: 1px solid var(--line2);
 
+    #home-button {
+      background-color: transparent;
+      border: transparent 0px;
+      font-size: 2em;
+      font-weight: normal;
+      letter-spacing: 3px;
+      font-family: var(--ff-head);
+      color: var(--accent);
+      cursor: pointer;
+    }
+
     #download-button {
     display: flex;
-    background-color: transparent;
     color: var(--accent);
     border: 1px solid var(--accent);
     border-radius: var(--radius-sm);
